@@ -12,7 +12,7 @@ import clsx from "clsx";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: { padding: "20px" },
+    root: { padding: "20px", margin: "40px 0px" },
     formControl: {
       width: "100%",
       margin: `20px opx`,
