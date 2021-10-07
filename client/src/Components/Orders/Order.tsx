@@ -3,7 +3,7 @@ import { Container, Box } from "@mui/material";
 // import { useDispatch } from "react-redux";
 
 import OrderForm from "./OrderForm";
-// import OrderTable from "./OrderTable";
+import OrderTable from "./OrderTable";
 // import orderApi from "../../api/order";
 // import { orderAction } from "../../redux/slices/orderSlice";
 
@@ -45,7 +45,7 @@ const Orders = () => {
         orderLimitFunc={(value: string) => setOrderLimit(value)}
       />
       <Box mt={4} mb={4}>
-        {/* <OrderTable /> */}
+        <OrderTable />
       </Box>
     </Container>
   );
