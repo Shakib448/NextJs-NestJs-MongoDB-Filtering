@@ -49,6 +49,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     table: {
       minWidth: 1024,
+      padding: "10px 20px",
     },
     tableContainer: {
       height: "400px",
