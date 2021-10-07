@@ -26,6 +26,7 @@ export class Order {
       price: { type: number; required: true };
     },
   ];
+  static history: any;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);
