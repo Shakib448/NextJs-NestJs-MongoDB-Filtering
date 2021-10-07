@@ -1,6 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
+import Orders from "../src/Components/Orders/Order";
 
 export default function Home() {
-  return <h1>Hello Muktadir</h1>;
+  return <Orders />;
 }
