@@ -6,8 +6,8 @@ export class OrderController {
   constructor(private orderService: OrderService) {}
 
   @Get()
-  getAllCats() {
-    this.orderService.findAll();
+  async getAllCats() {
+    return await this.orderService.findAll();
   }
 
   @Post('insert')
