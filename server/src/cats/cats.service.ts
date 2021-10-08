@@ -13,7 +13,7 @@ export class CatsService {
   }
 
   async deleteCat(): Promise<any> {
-    await this.catModel.deleteMany(cat);
+    await this.catModel.deleteMany();
   }
 
   async findAll(): Promise<any> {

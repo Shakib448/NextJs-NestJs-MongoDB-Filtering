@@ -17,16 +17,15 @@ export class Order {
   @Prop({ required: true })
   status: string;
 
-  @Prop({ type: Date, required: true })
-  history: [
-    {
-      date: Date;
-      customerId: { type: string; required: true };
-      contact: { type: string; required: true };
-      price: { type: number; required: true };
-    },
-  ];
-  static history: any;
+  // @Prop({ type: Date, required: true })
+  // history: [
+  //   {
+  //     date: Date;
+  //     customerId: { type: string; required: true };
+  //     contact: { type: string; required: true };
+  //     price: { type: number; required: true };
+  //   },
+  // ];
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

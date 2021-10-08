@@ -1,7 +1,8 @@
-import { CatsModule } from './../cats/cats.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+
+import { OrderModule } from './../orders/order.module';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { ConfigModule } from '@nestjs/config';
         uri: process.env.MONGO_URI,
       }),
     }),
-    CatsModule,
+    OrderModule,
     ConfigModule.forRoot(),
   ],
 })

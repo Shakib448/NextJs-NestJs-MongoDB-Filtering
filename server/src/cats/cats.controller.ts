@@ -16,7 +16,7 @@ export class CatsController {
   }
 
   @Delete('delete')
-  async delete() {
+  async deleteCats() {
     this.catsService.deleteCat();
   }
 }
