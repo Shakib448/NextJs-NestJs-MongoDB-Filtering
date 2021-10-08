@@ -19,7 +19,16 @@ export class OrderService {
     await this.orderModel.deleteMany();
   }
 
-  async findAll(): Promise<Order[]> {
-    return await this.orderModel.find().exec();
+  async findAll(query): Promise<Order[]> {
+    const status = query.status ? { status: { $in: query.status } } : {};
+    const payment = query.payment
+      ? { paymentMethod: { $in: query.payment } }
+      : {};
+    return await this.orderModel
+      .find({
+        ...status,
+      })
+      .where({ ...payment });
+    // .limit(+query.limit).exec()
   }
 }
