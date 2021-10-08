@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 export type OrderDocument = Order & Document;
 
-@Schema()
+@Schema({ versionKey: false, timestamps: true })
 export class Order {
   @Prop({ required: true })
   order_id: string;
@@ -17,15 +17,17 @@ export class Order {
   @Prop({ required: true })
   status: string;
 
-  @Prop({ type: Date, required: true })
-  history: [
-    {
-      date: Date;
-      customerId: { type: string; required: true };
-      contact: { type: string; required: true };
-      price: { type: number; required: true };
-    },
-  ];
+  @Prop({
+    type: [
+      {
+        date: { type: Date, default: Date.now() },
+        customerId: { type: String, required: true },
+        contact: { type: String, required: true },
+        price: { type: Number, required: true },
+      },
+    ],
+  })
+  history: [];
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

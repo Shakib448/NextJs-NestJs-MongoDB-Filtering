@@ -1,9 +1,22 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Post, Get, Delete } from '@nestjs/common';
+import { OrderService } from './order.service';
 
 @Controller('orders')
-export class OrdersController {
+export class OrderController {
+  constructor(private orderService: OrderService) {}
+
   @Get()
-  findAll(): string {
-    return 'This action return all cats';
+  async getAllCats() {
+    return await this.orderService.findAll();
+  }
+
+  @Post('insert')
+  async create() {
+    this.orderService.createOrders();
+  }
+
+  @Delete('delete')
+  async deleteCats() {
+    this.orderService.deleteOrders();
   }
 }
