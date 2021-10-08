@@ -1,3 +1,4 @@
+import { CatsModule } from './../cats/cats.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
 
@@ -8,6 +9,7 @@ import { Module } from '@nestjs/common';
         uri: 'mongodb+srv://nextLense:nextLense@cluster0.ufcti.mongodb.net/shakib?retryWrites=true&w=majority',
       }),
     }),
+    CatsModule,
   ],
   controllers: [],
 })
