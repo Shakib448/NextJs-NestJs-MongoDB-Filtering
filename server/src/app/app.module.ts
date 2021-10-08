@@ -1,8 +1,14 @@
+import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
-import { OrdersController } from 'src/orders/orders.controller';
 
 @Module({
-  imports: [],
-  controllers: [OrdersController],
+  imports: [
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: 'mongodb+srv://nextLense:nextLense@cluster0.ufcti.mongodb.net/shakib?retryWrites=true&w=majority',
+      }),
+    }),
+  ],
+  controllers: [],
 })
 export class AppModule {}
