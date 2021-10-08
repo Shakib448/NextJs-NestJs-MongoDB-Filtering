@@ -1,5 +1,5 @@
-export default function getRandomPaymentMethod() {
-  const payment: string[] = ['PayPal', 'Stripe', 'Cash On Delivery'];
+export default function getRandomStatus() {
+  const status: string[] = ['Failed', 'Processing', 'Pending', 'Delivered'];
 
-  return payment[Math.floor(Math.random() * payment.length)];
+  return status[Math.floor(Math.random() * status.length)];
 }
