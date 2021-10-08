@@ -13,6 +13,7 @@ export class OrderController {
   async deleteCats() {
     this.orderService.deleteOrders();
   }
+
   @Get()
   async getAllCats(@Query() query: string) {
     return await this.orderService.findAll(query);
