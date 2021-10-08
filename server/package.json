@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mongoose": "^9.0.0",
     "@nestjs/platform-express": "^8.0.0",
-    "dotenv": "^10.0.0",
     "mongoose": "^6.0.9",
     "nestjs-seeder": "^0.2.0",
     "reflect-metadata": "^0.1.13",

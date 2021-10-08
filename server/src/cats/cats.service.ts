@@ -1,15 +1,19 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Cat, CatDocument } from '../schemas/cat.schema';
+import { CatDocument } from '../schemas/cat.schema';
 import cat from '../../data/cat.data';
 
 @Injectable()
 export class CatsService {
-  constructor(@InjectModel(Cat.name) private catModel: Model<CatDocument>) {}
+  constructor(@InjectModel('Cats') private catModel: Model<CatDocument>) {}
 
   async createCat(): Promise<any> {
     await this.catModel.insertMany(cat);
+  }
+
+  async deleteCat(): Promise<any> {
+    await this.catModel.deleteMany(cat);
   }
 
   async findAll(): Promise<any> {
