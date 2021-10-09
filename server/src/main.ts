@@ -9,8 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({ logger: true }),
+    { cors: true },
   );
-  app.enableCors();
+
   await app.listen(5000, '0.0.0.0');
 }
 bootstrap();

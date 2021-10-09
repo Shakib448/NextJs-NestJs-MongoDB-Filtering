@@ -29,17 +29,21 @@ const Home = ({ data }: Props) => {
 
   useEffect(() => {
     const getProductBySearch = async () => {
-      if (status || payment) {
-        const { data } = await orderApi.getQueryOrderProducts(status, payment);
+      if (status || payment || orderLimit) {
+        const { data } = await orderApi.getQueryOrderProducts(
+          status,
+          payment,
+          orderLimit
+        );
         dispatch(orderAction(data));
       }
     };
     getProductBySearch();
 
-    if (!status && !payment) {
+    if (!status && !payment && !orderLimit) {
       dispatch(orderAction(data));
     }
-  }, [dispatch, status, payment, data]);
+  }, [dispatch, status, orderLimit, payment, data]);
 
   return (
     <Layout title="Order">
