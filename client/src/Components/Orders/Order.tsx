@@ -5,9 +5,9 @@ import OrderForm from "./OrderForm";
 import OrderTable from "./OrderTable";
 
 interface FunctionInterface {
-  setStatus(value: string): string;
-  setPayment(value: string): string;
-  setOrderLimit(value: string): string;
+  setStatus(value: string): void;
+  setPayment(value: string): void;
+  setOrderLimit(value: string): void;
   loading: boolean;
 }
 
