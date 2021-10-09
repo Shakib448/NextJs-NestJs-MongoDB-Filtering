@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { GetStaticProps } from "next";
 
 import Layout from "../src/Components/Layout";
@@ -22,11 +22,36 @@ interface Props {
 
 const Home = ({ data }: Props) => {
   const dispatch = useAppDispatch();
-  dispatch(orderAction(data));
+
+  const [status, setStatus] = useState("");
+  const [payment, setPayment] = useState("");
+  const [orderLimit, setOrderLimit] = useState("");
+
+  useEffect(() => {
+    const getProductBySearch = async () => {
+      if (status || payment || orderLimit) {
+        const { data } = await orderApi.getQueryOrderProducts(
+          status,
+          payment,
+          orderLimit
+        );
+        dispatch(orderAction(data));
+      }
+    };
+    getProductBySearch();
+
+    if (!status && !payment && !orderLimit) {
+      dispatch(orderAction(data));
+    }
+  }, [dispatch, status, payment, orderLimit]);
 
   return (
     <Layout title="Order">
-      <Orders />
+      <Orders
+        setStatus={setStatus}
+        setPayment={setPayment}
+        setOrderLimit={setOrderLimit}
+      />
     </Layout>
   );
 };

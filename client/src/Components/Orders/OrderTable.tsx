@@ -69,7 +69,7 @@ export default function OrderTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {orders.map((item) => (
+          {orders?.map((item) => (
             <Row key={item._id} item={item} />
           ))}
         </TableBody>
