@@ -3,7 +3,7 @@ interface EndPoints {
 }
 
 const endpoint: EndPoints = {
-  orders: "/api/orders",
+  orders: "/orders",
 };
 
 export default endpoint;
