@@ -16,20 +16,22 @@ $ yarn install
 # development
 $ npm run start
 # or
-yarn start
+$ yarn start
 
 # watch mode
 $ npm run start:dev
 # or
-yarn start:dev
+$ yarn start:dev
 
 # production mode
 $ npm run start:prod
 # or
-yarn start:prod
+$ yarn start:prod
 
 # both client & server
 $ npm run dev
+# or
+$ yarn dev
 ```
 
 ## Test
@@ -37,12 +39,17 @@ $ npm run dev
 ```bash
 # unit tests
 $ npm run test
+#or
+$ yarn test
 
 # e2e tests
 $ npm run test:e2e
-
+#or
+$ yarn test:e2e
 # test coverage
 $ npm run test:cov
+#or
+$ yarn test:cov
 ```
 
 ## Stay in touch
