@@ -1,5 +1,5 @@
-function capFirst(string: string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+function capFirst(String: string) {
+  return String?.charAt(0).toUpperCase() + String?.slice(1);
 }
 
 function getRandomInt(min: number, max: number) {
