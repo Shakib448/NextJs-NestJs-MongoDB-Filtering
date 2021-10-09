@@ -29,6 +29,7 @@
     "@nestjs/mongoose": "^9.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/platform-fastify": "^8.0.11",
+    "concurrently": "^6.3.0",
     "mongoose": "^6.0.9",
     "nestjs-seeder": "^0.2.0",
     "reflect-metadata": "^0.1.13",
