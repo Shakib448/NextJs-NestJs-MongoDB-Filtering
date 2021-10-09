@@ -5,10 +5,10 @@ import OrderForm from "./OrderForm";
 import OrderTable from "./OrderTable";
 
 interface FunctionInterface {
-  setStatus?: any;
-  setPayment?: any;
-  setOrderLimit?: any;
-  loading?: any;
+  setStatus(value: string): any;
+  setPayment(value: string): any;
+  setOrderLimit(value: string): any;
+  loading: boolean;
 }
 
 const Orders = ({
