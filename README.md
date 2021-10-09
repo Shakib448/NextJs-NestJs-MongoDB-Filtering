@@ -13,7 +13,7 @@ $ yarn install
 ## Running the app
 
 ```bash
-# If you want to run both client and server. Make sure you are in the server directory.
+# Make sure you are in the server directory.
 - cd server
 # Just copy that line below
 # In npm
