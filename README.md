@@ -13,43 +13,13 @@ $ yarn install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-# or
-$ yarn start
-
-# watch mode
-$ npm run start:dev
-# or
-$ yarn start:dev
-
-# production mode
-$ npm run start:prod
-# or
-$ yarn start:prod
-
-# both client & server
-$ npm run dev
-# or
-$ yarn dev
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-#or
-$ yarn test
-
-# e2e tests
-$ npm run test:e2e
-#or
-$ yarn test:e2e
-# test coverage
-$ npm run test:cov
-#or
-$ yarn test:cov
+# Make sure you are in the server directory.
+- cd server
+# Just copy that line below
+# In npm
+  npm run dev
+# In yarn
+  yarn dev
 ```
 
 ## Stay in touch
