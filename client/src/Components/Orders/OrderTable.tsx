@@ -38,14 +38,7 @@ interface Item {
     paymentMethod: string;
     deliveryAddress: string;
     order_id: string;
-    history: [
-      {
-        date: string;
-        customerId: string;
-        contact: string;
-        price: number;
-      }
-    ];
+    history: any[];
   };
 }
 
@@ -119,6 +112,13 @@ const useRowStyles = makeStyles({
   isPending: { color: "#2067FA", fontWeight: "bold" },
 });
 
+interface HistoryInterface {
+  date: string;
+  customerId: string;
+  contact: string;
+  price: number;
+}
+
 function Row({ item, number }: Item) {
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
@@ -170,7 +170,7 @@ function Row({ item, number }: Item) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {item.history.map((historyItem) => (
+                  {item.history.map((historyItem: HistoryInterface) => (
                     <TableRow key={historyItem.date}>
                       <TableCell component="th" scope="row">
                         {moment(historyItem.date).format("YYYY-MM-DD")}

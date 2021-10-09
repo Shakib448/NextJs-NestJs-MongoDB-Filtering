@@ -8,16 +8,7 @@ import { useAppDispatch } from "../src/redux/hooks";
 import { orderAction } from "../src/redux/slices/orderSlice";
 
 interface Props {
-  data: {
-    _id: string;
-    history: string[];
-    status: string;
-    paymentMethod: string;
-    deliveryAddress: string;
-    order_id: string;
-    createdAt?: string;
-    updatedAt?: string;
-  };
+  data: any[];
 }
 
 const Home = ({ data }: Props) => {
