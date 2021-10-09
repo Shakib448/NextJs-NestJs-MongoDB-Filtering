@@ -8,7 +8,6 @@ const orderSlice = createSlice({
   },
   reducers: {
     orderAction(state, { payload }) {
-      console.log(payload);
       state.orders = payload;
     },
   },
