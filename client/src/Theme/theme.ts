@@ -16,6 +16,9 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    background: {
+      default: "#0c2d48",
+    },
   },
   typography: {
     fontFamily: font,
