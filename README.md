@@ -10,12 +10,21 @@ $ npm install
 $ yarn install
 ```
 
+## Change api to local server
+
+```bash
+# Go to client/pages/api/client.ts
+  const apiClient = create({ baseURL: process.env.NEXT_PUBLIC_URI });
+# Just copy this line
+  const apiClient = create({ baseURL: "http://localhost:5000" });
+```
+
 ## Running the app
 
 ```bash
 # Make sure you are in the server directory.
 - cd server
-# Just copy that line below
+# Just copy this line
 # In npm
   npm run dev
 # In yarn

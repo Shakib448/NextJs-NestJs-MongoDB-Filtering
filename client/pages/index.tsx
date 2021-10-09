@@ -41,7 +41,7 @@ const Home = ({ data }: Props) => {
   }, [dispatch, status, orderLimit, payment, data]);
 
   return (
-    <Layout title="Order">
+    <Layout title="Order Page">
       <Orders
         setStatus={setStatus}
         setPayment={setPayment}
