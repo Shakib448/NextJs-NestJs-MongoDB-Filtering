@@ -31,6 +31,24 @@ const useStyles = makeStyles(() =>
   })
 );
 
+interface Item {
+  number: number;
+  item: {
+    status: string;
+    paymentMethod: string;
+    deliveryAddress: string;
+    order_id: string;
+    history: [
+      {
+        date: string;
+        customerId: string;
+        contact: string;
+        price: number;
+      }
+    ];
+  };
+}
+
 export default function OrderTable() {
   const classes = useStyles();
 
@@ -45,6 +63,7 @@ export default function OrderTable() {
       >
         <TableHead>
           <TableRow>
+            <TableCell />
             <TableCell />
             <TableCell>
               <Typography variant="subtitle2">
@@ -69,8 +88,8 @@ export default function OrderTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {orders?.map((item) => (
-            <Row key={item._id} item={item} />
+          {orders?.map((item, index: number) => (
+            <Row key={index} number={index + 1} item={item} />
           ))}
         </TableBody>
       </Table>
@@ -100,13 +119,14 @@ const useRowStyles = makeStyles({
   isPending: { color: "#2067FA", fontWeight: "bold" },
 });
 
-function Row({ item }) {
+function Row({ item, number }: Item) {
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
 
   return (
     <React.Fragment>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
+        <TableCell>{number}</TableCell>
         <TableCell>
           <IconButton
             aria-label="expand row"

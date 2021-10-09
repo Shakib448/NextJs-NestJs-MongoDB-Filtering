@@ -10,13 +10,13 @@ import { orderAction } from "../src/redux/slices/orderSlice";
 interface Props {
   data: {
     _id: string;
-    history: any[];
+    history: string[];
     status: string;
     paymentMethod: string;
     deliveryAddress: string;
     order_id: string;
-    createdAt: string;
-    updatedAt: string;
+    createdAt?: string;
+    updatedAt?: string;
   };
 }
 
