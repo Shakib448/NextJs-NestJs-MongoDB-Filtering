@@ -20,7 +20,7 @@ export class OrderService {
   }
 
   async findAll(query): Promise<Order[]> {
-    console.log(query);
+    console.log(query.status, query.payment);
     const status = query.status ? { status: { $in: query.status } } : {};
     const payment = query.payment
       ? { paymentMethod: { $in: query.payment } }
@@ -29,8 +29,8 @@ export class OrderService {
       .find({
         ...status,
       })
-      .where({ ...payment })
-      // .limit(+query.orderLimit)
-      .exec();
+      .where({ ...payment });
+    // .limit(+query.orderLimit)
+    // .exec();
   }
 }
