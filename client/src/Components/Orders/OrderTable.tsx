@@ -28,6 +28,9 @@ const useStyles = makeStyles(() =>
     tableContainer: {
       height: "400px",
     },
+    font: {
+      color: "#fff",
+    },
   })
 );
 
@@ -54,26 +57,26 @@ export default function OrderTable() {
         aria-label="sticky table"
         className={clsx(classes.table)}
       >
-        <TableHead>
+        <TableHead className={clsx(classes.font)}>
           <TableRow>
             <TableCell />
             <TableCell />
             <TableCell>
-              <Typography variant="subtitle2">
+              <Typography variant="subtitle2" className={clsx(classes.font)}>
                 <Box fontWeight="fontWeightBold">ID</Box>
               </Typography>
             </TableCell>
-            <TableCell align="center">
-              <Typography variant="subtitle2">
+            <TableCell align="center" className={clsx(classes.font)}>
+              <Typography variant="subtitle2" className={clsx(classes.font)}>
                 <Box fontWeight="fontWeightBold">Delivery Address</Box>
               </Typography>
             </TableCell>
-            <TableCell align="center">
+            <TableCell align="center" className={clsx(classes.font)}>
               <Typography variant="subtitle2">
                 <Box fontWeight="fontWeightBold">Payment</Box>
               </Typography>
             </TableCell>
-            <TableCell align="center">
+            <TableCell align="center" className={clsx(classes.font)}>
               <Typography variant="subtitle2">
                 <Box fontWeight="fontWeightBold">Status</Box>
               </Typography>
