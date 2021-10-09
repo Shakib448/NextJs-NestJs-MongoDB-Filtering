@@ -47,13 +47,13 @@ const OrderForm = ({
       orderLimitFunc("");
     }
     if (e.target.value === "Last 7 Orders") {
-      orderLimitFunc(7);
+      orderLimitFunc("7");
     }
     if (e.target.value === "Last 15 Orders") {
-      orderLimitFunc(15);
+      orderLimitFunc("15");
     }
     if (e.target.value === "Last 30 Orders") {
-      orderLimitFunc(30);
+      orderLimitFunc("30");
     }
   };
 

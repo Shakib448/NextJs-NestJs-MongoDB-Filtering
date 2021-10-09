@@ -24,11 +24,13 @@ export class OrderService {
     const payment = query.payment
       ? { paymentMethod: { $in: query.payment } }
       : {};
+    const orderLimit = query.orderLimit ? query.orderLimit : '';
     return await this.orderModel
       .find({
         ...status,
       })
-      .where({ ...payment });
-    // .limit(+query.limit).exec()
+      .where({ ...payment })
+      .limit(+orderLimit)
+      .exec();
   }
 }
