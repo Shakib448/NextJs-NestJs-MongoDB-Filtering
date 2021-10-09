@@ -5,13 +5,15 @@ import {
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app/app.module';
 
+const PORT = process.env.PORT || 5000;
+
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter({ logger: true }),
-    { cors: true },
+    new FastifyAdapter(),
   );
+  app.enableCors();
 
-  await app.listen(process.env.PORT || 5000, '0.0.0.0');
+  await app.listen(PORT);
 }
 bootstrap();
