@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box } from "@mui/material";
+import { Container, Box, Backdrop, CircularProgress } from "@mui/material";
 
 import OrderForm from "./OrderForm";
 import OrderTable from "./OrderTable";
@@ -8,12 +8,14 @@ interface FunctionInterface {
   setStatus?: any;
   setPayment?: any;
   setOrderLimit?: any;
+  loading?: any;
 }
 
 const Orders = ({
   setStatus,
   setPayment,
   setOrderLimit,
+  loading,
 }: FunctionInterface) => {
   return (
     <Container maxWidth="lg">
@@ -23,6 +25,12 @@ const Orders = ({
         orderLimitFunc={(value: string) => setOrderLimit(value)}
       />
       <Box mt={4} mb={4}>
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
         <OrderTable />
       </Box>
     </Container>

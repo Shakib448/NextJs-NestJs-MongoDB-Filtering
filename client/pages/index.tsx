@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GetStaticProps, GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 import Layout from "../src/Components/Layout";
 import Orders from "../src/Components/Orders/Order";
@@ -17,15 +17,19 @@ const Home = ({ data }: Props) => {
   const [status, setStatus] = useState("");
   const [payment, setPayment] = useState("");
   const [orderLimit, setOrderLimit] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getProductBySearch = async () => {
       if (status || payment || orderLimit) {
+        setLoading(true);
         const { data } = await orderApi.getQueryOrderProducts(
           status,
           payment,
           orderLimit
         );
+        setLoading(false);
+
         dispatch(orderAction(data));
       }
     };
@@ -42,6 +46,7 @@ const Home = ({ data }: Props) => {
         setStatus={setStatus}
         setPayment={setPayment}
         setOrderLimit={setOrderLimit}
+        loading={loading}
       />
     </Layout>
   );
